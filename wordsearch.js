@@ -1,3 +1,5 @@
+//By: William Ye, Juliet Li, Yusuf Abdulla
+
 const wordSearch = (letters, word) => { 
     if (! horizontalSearch(letters, word)) {
         if (! horizontalSearch(backwards(letters), word)) {
