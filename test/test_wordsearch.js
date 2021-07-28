@@ -20,7 +20,7 @@ describe("#wordSearch()", function() {
     assert.isFalse(result);
   });
 
-  it("should return true if the word is present", function() {
+  it("should return true if the word is present horizontally", function() {
     const result = wordSearch([
       ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
       ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
@@ -35,4 +35,24 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("return true if the word is present vertically", () => {
+    const result = wordSearch([
+      ["H", "O", "O", "O"],
+      ["I", "O", "O", "O"],
+      ["G", "O", "O", "O"],
+      ["H", "O", "O", "O"],
+    ], 'HIGH')
+    assert.isTrue(result);
+  })
+
+  it("return true if the word is backwards", () => {
+    const result = wordSearch([
+      ["O", "O", "O", "O"],
+      ["O", "Y", "K", "S"],
+      ["O", "O", "O", "O"],
+      ["O", "O", "O", "O"],
+    ], 'SKY')
+    assert.isTrue(result);
+  })
 });
